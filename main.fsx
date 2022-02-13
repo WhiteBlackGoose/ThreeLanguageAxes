@@ -24,3 +24,14 @@ let langs = [
     
     { name = "Javascript"; typing = 0.2; runtime = 0.3; paradigm = 0.4 }
 ]
+
+let points, labels =
+    langs
+    |> List.map (fun { name = n; typing = t; runtime = r; paradigm = p } -> (t, r, p), n)
+
+Chart.Point3D(
+    points,
+    MultiText = labels
+)
+|> Chart.toHTML
+|> (fun c -> System.IO.File.WriteAllText("./index.html", c)
