@@ -35,8 +35,8 @@ Chart.Point3D(
     MultiText = labels,
     TextPosition = StyleParam.TextPosition.BottomCenter
 )
-|> Chart.withXAxisStyle("Typing safety")
-|> Chart.withYAxisStyle("Compiled -> Interpreted")
+|> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
+|> Chart.withYAxisStyle("Compiled -> Interpreted", Id=StyleParam.SubPlotId.Scene 1)
 |> Chart.withZAxisStyle("Procedural -> FP")
 |> Chart.withSize(1200., 900.)
 |> GenericChart.toEmbeddedHTML
