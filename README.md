@@ -1,5 +1,7 @@
 # Three Language Axes
 
+See the [webpage](https://whiteblackgoose.github.io/ThreeLanguageAxes).
+
 This chart naively visualizes three major things about programming languages.
 
 ### Type System
