@@ -34,4 +34,4 @@ Chart.Point3D(
     MultiText = labels
 )
 |> Chart.toHTML
-|> (fun c -> System.IO.File.WriteAllText("./index.html", c)
+|> (fun c -> System.IO.File.WriteAllText("./index.html", c))
