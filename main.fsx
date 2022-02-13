@@ -32,8 +32,12 @@ let points, labels =
 
 Chart.Point3D(
     points,
-    MultiText = labels
+    MultiText = labels,
+    TextPosition = StyleParam.TextPosition.BottomCenter
 )
+|> Chart.withXAxisStyle("Typing safety")
+|> Chart.withYAxisStyle("Compiled -> Interpreted")
+|> Chart.withZAxisStyle("Procedural -> FP")
 |> Chart.withSize(1200., 900.)
 |> GenericChart.toEmbeddedHTML
 |> (fun c -> System.IO.File.WriteAllText("./index.html", c))
