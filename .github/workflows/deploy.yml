@@ -15,3 +15,8 @@ jobs:
         dotnet-version: '6.0.100'
     - run: |
         dotnet fsi main.fsx
+    - uses: JamesIves/github-pages-deploy-action@4.1.4
+      name: gh-pages publish
+      with:
+        branch: gh-pages
+        folder: .
