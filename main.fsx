@@ -28,6 +28,7 @@ let langs = [
 let points, labels =
     langs
     |> List.map (fun { name = n; typing = t; runtime = r; paradigm = p } -> (t, r, p), n)
+    |> List.unzip
 
 Chart.Point3D(
     points,
