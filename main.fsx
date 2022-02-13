@@ -34,5 +34,6 @@ Chart.Point3D(
     points,
     MultiText = labels
 )
+|> Chart.withSize(1200., 900.)
 |> GenericChart.toEmbeddedHTML
 |> (fun c -> System.IO.File.WriteAllText("./index.html", c))
