@@ -37,7 +37,7 @@ Chart.Point3D(
 )
 |> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
 |> Chart.withYAxisStyle("How close to HW it is", Id=StyleParam.SubPlotId.Scene 1)
-|> Chart.withZAxisStyle("Procedural -> FP")
+|> Chart.withZAxisStyle("Expressiveness/declarativeness")
 |> Chart.withSize(1200., 900.)
 |> GenericChart.toEmbeddedHTML
 |> (fun c -> System.IO.File.WriteAllText("./index.html", c))
