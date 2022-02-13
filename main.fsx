@@ -9,20 +9,24 @@ type Language = {
     paradigm: float
 }
 
+let typesafe n = n
+
+let closeToHw n = n
+
+let declarative n = n
+
 let langs = [
-    { name = "C#"; typing = 0.7; runtime = 0.8; paradigm = 0.5 }
-    
-    { name = "C";  typing = 0.5; runtime = 0.9; paradigm = 0.1 }
-    
-    { name = "F#"; typing = 0.8; runtime = 0.9; paradigm = 0.8 }
-    
-    { name = "Python"; typing = 0.3; runtime = 0.2; paradigm = 0.4 }
-    
-    { name = "Asm"; typing = 0.0; runtime = 1.0; paradigm = 0.0 }
-    
-    { name = "F*"; typing = 1.0; runtime = 0.1; paradigm = 1.0 }
-    
-    { name = "Javascript"; typing = 0.2; runtime = 0.3; paradigm = 0.4 }
+    { name = "C#";         typing = typesafe 0.7; runtime = closeToHw 0.7; paradigm = declarative 0.5 }
+    { name = "C";          typing = typesafe 0.5; runtime = closeToHw 0.9; paradigm = declarative 0.1 }
+    { name = "F#";         typing = typesafe 0.8; runtime = closeToHw 0.7; paradigm = declarative 0.8 }
+    { name = "Python";     typing = typesafe 0.3; runtime = closeToHw 0.2; paradigm = declarative 0.4 }
+    { name = "Asm";        typing = typesafe 0.0; runtime = closeToHw 1.0; paradigm = declarative 0.0 }
+    { name = "F*";         typing = typesafe 1.0; runtime = closeToHw 0.1; paradigm = declarative 1.0 }
+    { name = "Javascript"; typing = typesafe 0.2; runtime = closeToHw 0.3; paradigm = declarative 0.4 }
+    { name = "Kotlin";     typing = typesafe 0.8; runtime = closeToHw 0.5; paradigm = declarative 0.6 }
+    { name = "Java";       typing = typesafe 0.6; runtime = closeToHw 0.5; paradigm = declarative 0.4 }
+    { name = "Haskell";    typing = typesafe 0.9; runtime = closeToHw 0.8; paradigm = declarative 0.9 }
+    { name = "Fresh";      typing = typesafe 0.8; runtime = closeToHw 0.7; paradigm = declarative 0.8 }
 ]
 
 let points, labels =
