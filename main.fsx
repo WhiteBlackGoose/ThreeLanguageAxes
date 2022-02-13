@@ -26,7 +26,7 @@ let langs = [
     { name = "Kotlin";     typing = typesafe 0.8; runtime = closeToHw 0.5; paradigm = declarative 0.6 }
     { name = "Java";       typing = typesafe 0.6; runtime = closeToHw 0.5; paradigm = declarative 0.4 }
     { name = "Haskell";    typing = typesafe 0.9; runtime = closeToHw 0.8; paradigm = declarative 0.9 }
-    { name = "Fresh";      typing = typesafe 0.8; runtime = closeToHw 0.7; paradigm = declarative 0.8 }
+    { name = "Fresh";      typing = typesafe 0.8; runtime = closeToHw 0.7; paradigm = declarative 0.7 }
 ]
 
 let points, labels =
