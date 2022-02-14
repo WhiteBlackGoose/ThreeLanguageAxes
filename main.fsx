@@ -1,6 +1,8 @@
 #r "nuget: Plotly.NET, 2.0.0-preview.17"
+#r "nuget: Giraffe.ViewEngine, 2.0.0-alpha-1"
 
 open Plotly.NET
+open Giraffe.ViewEngine
 
 type Language = {
     name: string
@@ -34,14 +36,34 @@ let points, labels =
     |> List.map (fun { name = n; typing = t; runtime = r; paradigm = p } -> (t, r, p), n)
     |> List.unzip
 
-Chart.Point3D(
-    points,
-    MultiText = labels,
-    TextPosition = StyleParam.TextPosition.BottomCenter
-)
-|> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
-|> Chart.withYAxisStyle("How close to HW it is", Id=StyleParam.SubPlotId.Scene 1)
-|> Chart.withZAxisStyle("Expressiveness/declarativeness")
-|> Chart.withSize(1200., 900.)
-|> GenericChart.toEmbeddedHTML
-|> (fun c -> System.IO.File.WriteAllText("./index.html", c))
+let htmlChart =
+    Chart.Point3D(
+        points,
+        MultiText = labels,
+        TextPosition = StyleParam.TextPosition.BottomCenter
+    )
+    |> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
+    |> Chart.withYAxisStyle("How close to HW it is", Id=StyleParam.SubPlotId.Scene 1)
+    |> Chart.withZAxisStyle("Expressiveness/declarativeness")
+    |> GenericChart.toEmbeddedHTML
+
+let src = html [] [
+    head [] [
+        Text """
+.main {
+    width: 60%;
+    margin-left: 20%;
+}
+.container {
+    width: 100%;
+}
+        """
+    ]
+    body [] [
+        div [_class "main"] [
+            raw htmlChart
+        ]
+    ]
+]
+
+File.WriteAllText("./index.html", src)
