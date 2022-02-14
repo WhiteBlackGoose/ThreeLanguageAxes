@@ -49,7 +49,8 @@ let htmlChart =
 
 let src = html [] [
     head [] [
-        Text """
+        style [] [
+            Text """
 .main {
     width: 60%;
     margin-left: 20%;
@@ -57,7 +58,8 @@ let src = html [] [
 .container {
     width: 100%;
 }
-        """
+"""
+        ]
     ]
     body [] [
         div [_class "main"] [
