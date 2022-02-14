@@ -44,6 +44,13 @@ let src = html [] [
         ]
     ]
     body [] [
+        h1 [] [ Text "Comparison of languages" ]
+        p [] [ Text "It's not recommended to rely on these, they only represent the author's opinion and have been critized for good reasons." ]
+        p [] [
+            Text "See the "
+            a [_src "https://github.com/WhiteBlackGoose/ThreeLanguageAxes"] [ Text "sources" ]
+            Text "."
+        ]
         div [_class "main"] [
             let graphInfos = [
                 (fun { typing = t; runtime = r } -> t, r), "Type safety", "Abstraction from machine code"
