@@ -24,7 +24,7 @@ let langs = [
     { name = "F#";         typing = typesafe 0.80; runtime = closeToHw 0.70; paradigm = declarative 0.80 }
     { name = "Python";     typing = typesafe 0.30; runtime = closeToHw 0.20; paradigm = declarative 0.40 }
     { name = "Asm";        typing = typesafe 0.00; runtime = closeToHw 1.00; paradigm = declarative 0.05 }
-    { name = "F*";         typing = typesafe 1.00; runtime = closeToHw 0.10; paradigm = declarative 1.00 }
+    { name = "F*";         typing = typesafe 1.00; runtime = closeToHw 0.10; paradigm = declarative nan }
     { name = "Javascript"; typing = typesafe 0.20; runtime = closeToHw 0.30; paradigm = declarative 0.40 }
     { name = "Kotlin";     typing = typesafe 0.80; runtime = closeToHw 0.50; paradigm = declarative 0.60 }
     { name = "Java";       typing = typesafe 0.60; runtime = closeToHw 0.50; paradigm = declarative 0.40 }
