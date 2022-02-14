@@ -54,11 +54,7 @@ let src = html [] [
             for (f, xName, yName) in graphInfos do
                 div [] [
                     let x, y = langs |> List.map f |> List.unzip
-                    Chart.Point(
-                        x, y,
-                        MultiText = langs |> List.map (fun l -> l.name),
-                        TextPosition = StyleParam.TextPosition.BottomCenter
-                    )
+                    Chart.Point(x, y, MultiText=List.map (fun l -> l.name) langs, TextPosition = StyleParam.TextPosition.BottomCenter)
                     |> Chart.withXAxisStyle(xName)
                     |> Chart.withYAxisStyle(yName)
                     |> Chart.withSize(900., 600.)
