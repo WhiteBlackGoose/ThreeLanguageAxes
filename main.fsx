@@ -13,7 +13,7 @@ type Language = {
 
 let typesafe n = n
 
-let closeToHw n = n
+let closeToHw n = 1.0 - n
 
 let declarative n = n
 
@@ -45,9 +45,9 @@ let src = html [] [
     body [] [
         div [_class "main"] [
             let graphInfos = [
-                (fun { typing = t; runtime = r } -> t, r), "Type safety", "Low-level-ness"
+                (fun { typing = t; runtime = r } -> t, r), "Type safety", "Abstraction from machine code"
                 (fun { typing = t; paradigm = p } -> t, p), "Type safety", "Expressiveness"
-                (fun { runtime = r; paradigm = p } -> r, p), "Low-level-ness", "Expressiveness"
+                (fun { runtime = r; paradigm = p } -> r, p), "Abstraction from machine code", "Expressiveness"
             ]
             for (f, xName, yName) in graphInfos do
                 div [] [
