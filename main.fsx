@@ -61,7 +61,7 @@ let src = html [] [
     ]
     body [] [
         div [_class "main"] [
-            raw htmlChart
+            rawText htmlChart
         ]
     ]
 ]
