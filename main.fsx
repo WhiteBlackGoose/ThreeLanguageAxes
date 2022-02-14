@@ -18,18 +18,19 @@ let closeToHw n = 1.0 - n
 let declarative n = n
 
 let langs = [
-    { name = "C#";         typing = typesafe 0.70; runtime = closeToHw 0.7; paradigm = declarative 0.50 }
-    { name = "C";          typing = typesafe 0.50; runtime = closeToHw 0.9; paradigm = declarative 0.10 }
-    { name = "C++";        typing = typesafe 0.55; runtime = closeToHw 0.9; paradigm = declarative 0.15 }
-    { name = "F#";         typing = typesafe 0.80; runtime = closeToHw 0.7; paradigm = declarative 0.80 }
-    { name = "Python";     typing = typesafe 0.30; runtime = closeToHw 0.2; paradigm = declarative 0.40 }
-    { name = "Asm";        typing = typesafe 0.00; runtime = closeToHw 1.0; paradigm = declarative 0.00 }
-    { name = "F*";         typing = typesafe 1.00; runtime = closeToHw 0.1; paradigm = declarative 1.00 }
-    { name = "Javascript"; typing = typesafe 0.20; runtime = closeToHw 0.3; paradigm = declarative 0.40 }
-    { name = "Kotlin";     typing = typesafe 0.80; runtime = closeToHw 0.5; paradigm = declarative 0.60 }
-    { name = "Java";       typing = typesafe 0.60; runtime = closeToHw 0.5; paradigm = declarative 0.40 }
-    { name = "Haskell";    typing = typesafe 0.90; runtime = closeToHw 0.8; paradigm = declarative 0.90 }
-    { name = "Fresh";      typing = typesafe 0.75; runtime = closeToHw 0.7; paradigm = declarative 0.70 }
+    { name = "C#";         typing = typesafe 0.70; runtime = closeToHw 0.70; paradigm = declarative 0.50 }
+    { name = "C";          typing = typesafe 0.50; runtime = closeToHw 0.90; paradigm = declarative 0.10 }
+    { name = "C++";        typing = typesafe 0.55; runtime = closeToHw 0.90; paradigm = declarative 0.15 }
+    { name = "F#";         typing = typesafe 0.80; runtime = closeToHw 0.70; paradigm = declarative 0.80 }
+    { name = "Python";     typing = typesafe 0.30; runtime = closeToHw 0.20; paradigm = declarative 0.40 }
+    { name = "Asm";        typing = typesafe 0.00; runtime = closeToHw 1.00; paradigm = declarative 0.00 }
+    { name = "F*";         typing = typesafe 1.00; runtime = closeToHw 0.10; paradigm = declarative 1.00 }
+    { name = "Javascript"; typing = typesafe 0.20; runtime = closeToHw 0.30; paradigm = declarative 0.40 }
+    { name = "Kotlin";     typing = typesafe 0.80; runtime = closeToHw 0.50; paradigm = declarative 0.60 }
+    { name = "Java";       typing = typesafe 0.60; runtime = closeToHw 0.50; paradigm = declarative 0.40 }
+    { name = "Haskell";    typing = typesafe 0.90; runtime = closeToHw 0.80; paradigm = declarative 0.90 }
+    { name = "Fresh";      typing = typesafe 0.75; runtime = closeToHw 0.70; paradigm = declarative 0.70 }
+    { name = "Brainfuck";  typing = typesafe 0.00; runtime = closeToHw 0.95; paradigm = declarative 0.00 }
 ]
 
 let src = html [] [
