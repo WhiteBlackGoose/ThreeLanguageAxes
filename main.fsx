@@ -45,6 +45,7 @@ let htmlChart =
     |> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
     |> Chart.withYAxisStyle("How close to HW it is", Id=StyleParam.SubPlotId.Scene 1)
     |> Chart.withZAxisStyle("Expressiveness/declarativeness")
+    |> Chart.withSize(1500., 1000.)
     |> GenericChart.toChartHTML
 
 let src = html [] [
