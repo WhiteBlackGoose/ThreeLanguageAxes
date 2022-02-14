@@ -35,12 +35,8 @@ let src = html [] [
     head [] [
         style [] [
             Text """
-.main {
-    width: 60%;
-    margin-left: 20%;
-}
 .container {
-    width: 100%;
+    // width: 100%;
 }
 """
         ]
