@@ -50,8 +50,8 @@ let src = html [] [
             let graphInfos = [
                 (fun { typing = t; runtime = r } -> t, r), "Type safety", "Runtime abstraction"
                 (fun { typing = t; paradigm = p } -> t, p), "Type safety", "Expressiveness"
-                ]
-            for (f, xName, yName) in graphInfos
+            ]
+            for (f, xName, yName) in graphInfos do
                 div [] [
                     Chart.Point(
                         langs |> Lits.map f,
