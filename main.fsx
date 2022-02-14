@@ -66,4 +66,4 @@ let src = html [] [
     ]
 ]
 
-File.WriteAllText("./index.html", src)
+System.IO.File.WriteAllText("./index.html", src)
