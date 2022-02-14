@@ -48,7 +48,7 @@ let src = html [] [
         p [] [ Text "It's not recommended to rely on these, they only represent the author's opinion and have been critized for good reasons." ]
         p [] [
             Text "See the "
-            a [_src "https://github.com/WhiteBlackGoose/ThreeLanguageAxes"] [ Text "sources" ]
+            a [_href "https://github.com/WhiteBlackGoose/ThreeLanguageAxes"] [ Text "sources" ]
             Text "."
         ]
         div [_class "main"] [
