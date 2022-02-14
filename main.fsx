@@ -31,23 +31,6 @@ let langs = [
     { name = "Fresh";      typing = typesafe 0.8; runtime = closeToHw 0.7; paradigm = declarative 0.7 }
 ]
 
-let points, labels =
-    langs
-    |> List.map (fun { name = n; typing = t; runtime = r; paradigm = p } -> (t, r, p), n)
-    |> List.unzip
-
-let htmlChart =
-    Chart.Point3D(
-        points,
-        MultiText = labels,
-        TextPosition = StyleParam.TextPosition.BottomCenter
-    )
-    |> Chart.withXAxisStyle("Typing safety", Id=StyleParam.SubPlotId.Scene 1)
-    |> Chart.withYAxisStyle("How close to HW it is", Id=StyleParam.SubPlotId.Scene 1)
-    |> Chart.withZAxisStyle("Expressiveness/declarativeness")
-    |> Chart.withSize(1200., 1000.)
-    |> GenericChart.toChartHTML
-
 let src = html [] [
     head [] [
         style [] [
@@ -64,7 +47,20 @@ let src = html [] [
     ]
     body [] [
         div [_class "main"] [
-            rawText htmlChart
+            let graphInfos = [
+                (fun { typing = t; runtime = r } -> t, r), "Type safety", "Runtime abstraction"
+                (fun { typing = t; paradigm = p } -> t, p), "Type safety", "Expressiveness"
+            ]
+            for (f, xName, yName) in graphInfos do
+                div [] [
+                    let x, y = langs |> List.map f |> List.unzip
+                    Chart.Point(x, y, MultiText=List.map (fun l -> l.name) langs, TextPosition = StyleParam.TextPosition.BottomCenter)
+                    |> Chart.withXAxisStyle(xName)
+                    |> Chart.withYAxisStyle(yName)
+                    |> Chart.withSize(900., 600.)
+                    |> GenericChart.toChartHTML
+                    |> rawText
+                ]
         ]
     ]
 ]
