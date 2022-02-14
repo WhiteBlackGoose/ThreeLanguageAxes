@@ -31,7 +31,6 @@ let langs = [
     { name = "Haskell";    typing = typesafe 0.90; runtime = closeToHw 0.80; paradigm = declarative 0.90 }
     { name = "Fresh";      typing = typesafe 0.75; runtime = closeToHw 0.70; paradigm = declarative 0.70 }
     { name = "Brainfuck";  typing = typesafe 0.00; runtime = closeToHw 0.95; paradigm = declarative 0.00 }
-    { name = "OCaml";      typing = typesafe 0.80; runtime = closeToHw 0.75; paradigm = declarative 0.80 }
 ]
 
 let src = html [] [
