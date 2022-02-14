@@ -54,7 +54,7 @@ let src = html [] [
             for (f, xName, yName) in graphInfos do
                 div [] [
                     Chart.Point(
-                        langs |> Lits.map f,
+                        langs |> List.map f,
                         MultiText = langs |> List.map (fun l -> l.name),
                         TextPosition = StyleParam.TextPosition.BottomCenter
                     )
