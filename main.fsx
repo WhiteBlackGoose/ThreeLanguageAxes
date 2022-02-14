@@ -66,4 +66,6 @@ let src = html [] [
     ]
 ]
 
-System.IO.File.WriteAllText("./index.html", src)
+let srcText = RenderView.AsString.htmlNode src
+
+System.IO.File.WriteAllText("./index.html", srcText)
